@@ -1,0 +1,207 @@
+*{
+    padding: 0;
+    margin:0;
+    box-sizing: border-box;
+    outline: 0;
+
+
+}
+
+ h1 {
+    font-family: monospace;/* Web-safe typewriter-like font */
+    color: #fff;
+    overflow: hidden;/* Ensures the content is not revealed until the animation */
+    border-right: .17em solid pink;/* The typewriter cursor */
+    white-space: nowrap;/* Keeps the content on a single line */
+    margin: 0 auto;/* Gives that scrolling effect as the typing happens */
+    letter-spacing: .17em;/* Adjust as needed */
+    animation: typing 2.5s steps(20,end ), blinking-cursor .5s step-end infinite;
+  }
+  /* The typing effect */
+  @keyframes typing {
+    from {
+      width: 0
+    }
+    to {
+      width: 20%
+    }
+  }
+  /* The typewriter cursor effect */
+  @keyframes blinking-cursor {
+    from,
+    to {
+      border-color: transparent
+    }
+    50% {
+      border-color: pink;
+    }
+  }
+
+body{
+    font-family: sans-serif;
+    /* Created with https://www.css-gradient.com */
+    /* Created with https://www.css-gradient.com */
+    background-image: linear-gradient( to bottom right, rgba(79,51,176,1.0),rgba(210,53,165));
+    /*background: #E37D7D;
+    background: -webkit-linear-gradient(top left, #E37D7D, #0C22D3);
+    background: -moz-linear-gradient(top left, #E37D7D, #0C22D3);
+    background: linear-gradient(to bottom right, #E37D7D, #0C22D3);*/
+}
+
+a{
+    text-decoration: none;
+    color: #fff;
+}
+
+.container{
+    height: 100vh;
+    width: 100vw;
+    display: grid;
+    place-items: center;
+}
+
+.calculator{
+    position: relative;
+    height: auto;
+    width: auto;
+    padding: 20px;
+    border-radius: 10px;
+    box-shadow: 0 0 30px #000;
+}
+
+.theme-toggler{
+    position: absolute;
+    top: 30px;
+    right: 30px;
+    color: rgb(158, 158, 158);
+    cursor: pointer;
+    z-index: 1;
+}
+
+.fa.fa-sun-o::before{
+    
+    color: rgb(170, 170, 170);
+}
+
+
+.theme-toggler.active{
+    color: #333;
+}
+
+.theme-toggler.active::before{
+    background-color: rgb(233, 233, 233);
+}
+
+.theme-toggler::before{
+    content:'';
+    
+    position: absolute;
+    top: 50%;
+    transform: translate(-50%,-50%);
+    border-radius: 50%;
+    background-color: #333;
+    z-index: -1;
+}
+
+#display{
+    margin: 0 10px;
+    height: 150px;
+    width: auto;
+    max-width: 270px;
+    display: flex;
+    align-items: flex-end;
+    justify-content: flex-end;
+    font-size: 30px;
+    margin-bottom: 20px;
+    overflow-x: scroll;
+}
+
+#display::-webkit-scrollbar{
+    display: block;
+    height: 3px;
+}
+
+button{
+    height: 60px;
+    width: 60px;
+    border: 0;
+    border-radius:30px;
+    margin: 5px;
+    font-size: 20px;
+    cursor: pointer;
+    transition: all 200ms ease;
+}
+
+button:hover{
+    transform:scale(1.15);
+}
+
+.btn-number-zero{
+    width: 130px;
+}
+
+button#equals{
+    height: 130px;
+}
+
+/* Light theme */
+
+
+.calculator{
+    background-color: #fff;
+}
+
+.calculator #display{
+    color: #ffffff;
+}
+
+.calculator button#clear{
+    background-color: #aaaaaa;
+    color: #000;
+}
+
+.calculator button.btn-number,.calculator button.btn-number-zero{
+    background-color: #696969;
+    color: rgb(255, 255, 255);
+}
+
+.calculator button.btn-operator{
+    background-color: #fca12a;
+    color: #ffffff;
+}
+
+.calculator button.btn-equal{
+    background-color: #aaaaaa;
+    color: #000;
+}
+
+/* Dark Theme */
+
+.calculator.dark{
+    background-color: #000;
+}
+
+.calculator.dark #display{
+    color: #ffffff;
+}
+
+.calculator.dark button#clear{
+    background-color: #929292;
+    color: #000;
+}
+
+.calculator.dark button.btn-number,.calculator.dark button.btn-number-zero{
+    background-color: #505050;
+    color: rgb(255, 255, 255);
+}
+
+.calculator.dark button.btn-operator{
+    background-color: #ff970f;
+    color: #ffffff;
+}
+
+.calculator.dark button.btn-equal{
+    background-color: #929292;
+    color: #000;
+}
+
